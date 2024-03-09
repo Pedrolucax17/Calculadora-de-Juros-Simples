@@ -13,14 +13,15 @@ fun Inbox(
     placeHolder: String,
     label: String,
     keyBoardType: KeyboardType,
-    modifier: Modifier
+    modifier: Modifier,
+    uptadeValue: (String) -> Unit
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = {},
+        onValueChange = uptadeValue,
         modifier = modifier,
-        label = { Text(text = label)},
-        placeholder = { Text(text = placeHolder)},
+        label = { Text(text = label) },
+        placeholder = { Text(text = placeHolder) },
         keyboardOptions = KeyboardOptions(
             keyboardType = keyBoardType
         )
