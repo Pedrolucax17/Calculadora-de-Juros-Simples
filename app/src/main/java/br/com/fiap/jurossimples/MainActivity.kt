@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import br.com.fiap.jurossimples.calculator.calcularJuros
 import br.com.fiap.jurossimples.calculator.calcularMontante
 import br.com.fiap.jurossimples.components.Inbox
+import br.com.fiap.jurossimples.components.ResultCard
 import br.com.fiap.jurossimples.ui.theme.JurosSimplesTheme
 
 class MainActivity : ComponentActivity() {
@@ -95,7 +96,9 @@ fun JurosScreen() {
                        placeHolder = "Quanto deseja investir",
                        label = "Valor do Investimento",
                        keyBoardType = KeyboardType.Number,
-                       modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                       modifier = Modifier
+                           .fillMaxWidth()
+                           .padding(top = 16.dp),
                        uptadeValue = {
                            capital = it
                        }
@@ -106,7 +109,9 @@ fun JurosScreen() {
                         placeHolder = "Qual a taxa de juros mensal?",
                         label = "Taxa de juros mensal",
                         keyBoardType = KeyboardType.Number,
-                        modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 16.dp),
                         uptadeValue = {
                             taxa = it
                         }
@@ -117,7 +122,9 @@ fun JurosScreen() {
                         placeHolder = "Qual o tempo em meses?",
                         label = "Período em meses",
                         keyBoardType = KeyboardType.Number,
-                        modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 16.dp),
                         uptadeValue = {
                             tempo = it
                         }
@@ -145,60 +152,7 @@ fun JurosScreen() {
             }
             Spacer(modifier = Modifier.height(16.dp))
 
-//            Card (
-//                modifier = Modifier
-//                    .fillMaxWidth(),
-//                colors = CardDefaults.cardColors(
-//                    containerColor = Color(0xFF4CAF50)
-//                )
-//            ){
-//                Column(
-//                    modifier = Modifier
-//                        .padding(16.dp)
-//                ) {
-//                    Text(
-//                        text = "Resultado",
-//                        fontSize = 18.sp,
-//                        fontWeight = FontWeight.Bold,
-//                        color = Color.White
-//                    )
-//                    Spacer(modifier = Modifier.height(16.dp))
-//                    Row (
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                    ){
-//                        Text(
-//                            text = "Juros",
-//                            modifier = Modifier.padding(end = 8.dp),
-//                            fontSize = 16.sp,
-//                            fontWeight = FontWeight.Bold
-//                        )
-//                        Text(
-//                            text = juros.toString(),
-//                            modifier = Modifier.padding(end = 8.dp),
-//                            fontSize = 16.sp,
-//                            fontWeight = FontWeight.Bold,
-//                            color = Color.White
-//                        )
-//                    }
-//                    Spacer(modifier = Modifier.height(8.dp))
-//                    Row(modifier = Modifier.fillMaxWidth()){
-//                        Text(
-//                            text = "Montante",
-//                            modifier = Modifier.padding(end = 8.dp),
-//                            fontSize = 16.sp,
-//                            fontWeight = FontWeight.Bold
-//                        )
-//                        Text(
-//                            text = montante.toString(),
-//                            modifier = Modifier.padding(end = 8.dp),
-//                            fontSize = 16.sp,
-//                            fontWeight = FontWeight.Bold,
-//                            color = Color.White
-//                        )
-//                    }
-//                }
-//            }
+            ResultCard(juros = juros, montante = montante)
         }
     }
 }
